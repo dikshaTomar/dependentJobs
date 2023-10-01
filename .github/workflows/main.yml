@@ -18,10 +18,14 @@ jobs:
         # Replace these commands with your build and test scripts
         echo "Building and testing your application..."
 
-    - name: Deploy to Jenkins
-      uses: jenkinsci/github-plugin@2
-      with:
-        url: http://34.238.42.131/
-        user: diksha
-        token: 11f3cc906e54baf657f7750bf546f59975
-        job: jenkins-git
+    # - name: Deploy to Jenkins
+    #   uses: jenkinsci/github-plugin@2
+    #   with:
+    #     url: http://34.238.42.131/
+    #     user: diksha
+    #     token: 11f3cc906e54baf657f7750bf546f59975
+    #     job: jenkins-git
+
+    - name: Trigger Jenkins Job
+      run: |
+        curl -X POST http://34.238.42.131/buildByToken/buildWithParameters?job=jenkins-gite&token=11f3cc906e54baf657f7750bf546f59975
