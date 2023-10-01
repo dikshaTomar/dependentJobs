@@ -26,6 +26,6 @@ jobs:
     #     token: 11f3cc906e54baf657f7750bf546f59975
     #     job: jenkins-git
 
-    - name: Trigger Jenkins Jobs now ?
+    - name: Trigger Jenkins Jobs now ??
       run: |
         curl -X POST http://34.238.42.131/buildByToken/buildWithParameters?job=jenkins-gite&token=11f3cc906e54baf657f7750bf546f59975
