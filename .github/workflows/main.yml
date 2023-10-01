@@ -28,4 +28,8 @@ jobs:
 
     - name: Trigger Jenkins Jobs now ??
       run: |
-        curl -X POST http://34.238.42.131/buildByToken/buildWithParameters?job=jenkins-git&token=11f3cc906e54baf657f7750bf546f59975
+        JENKINS_URL=http://34.238.42.131/
+        JOB_NAME=jenkins-git
+        TOKEN=11f3cc906e54baf657f7750bf546f59975
+        
+        curl -X POST "$JENKINS_URL/buildByToken/buildWithParameters?job=$JOB_NAME&token=$TOKEN"
